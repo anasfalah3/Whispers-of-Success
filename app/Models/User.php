@@ -18,6 +18,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'role',
         'email',
         'password',
     ];
@@ -43,5 +44,21 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    public function podcasts()
+    {
+        return $this->hasMany(Podcast::class);
+    }
+    public function playlists()
+    {
+        return $this->hasMany(Playlist::class);
+    }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
     }
 }
