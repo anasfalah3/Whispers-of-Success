@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('playlist_id')->constrained();
             $table->foreignId('podcast_id')->constrained();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
