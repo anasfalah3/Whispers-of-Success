@@ -25,6 +25,7 @@ return new class extends Migration
             $table->integer('downloads');
             $table->integer('duration');
             $table->string('language');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

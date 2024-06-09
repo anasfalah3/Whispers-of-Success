@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('podcast_id')->constrained();
             $table->text('comment');
             $table->boolean('is_edited')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('podcast_id')->constrained();
             $table->integer('rating');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
